@@ -1,7 +1,5 @@
 const form = document.querySelector('#formulario');
 
-
-
 form.addEventListener('submit', function(event){
     event.preventDefault();
     const inputPeso = event.target.querySelector('#peso');
@@ -19,13 +17,11 @@ form.addEventListener('submit', function(event){
         setResultado('Altura inválida', false);
         return;
     }
-
     const imc = getImc(peso, altura);
     const nivel = getNivelImc(imc);
     
     const msg = `Seu IMC é ${imc} (${nivel})`;
     setResultado(msg, true);
-
 });
 
 function getNivelImc (imc) {
@@ -57,14 +53,12 @@ function getImc(peso, altura) {
 function criarP() {
     const p = document.createElement('p');
     return p;
-    
 }
 
 function setResultado(msg, isValid){
     const resultado = document.querySelector('#resultado');
     resultado.innerHTML = '';
 
-   
     const p = criarP(); 
 
     if(isValid) {
